@@ -19,7 +19,9 @@ const{loggedIn,setLoggedIn} = useContext(myContext)
   //fetchalljobs
 const fetchEachJob = async(_id)=>{
   try {
-   const res = await axios.get(`http://localhost:4000/api/getEach-Job/${_id}`)
+  //  const res = await axios.get(`http://localhost:4000/api/getEach-Job/${_id}`)
+      const res = await axios.get(`https://jobportal-backend-x18f.onrender.com/api/getEach-Job/${_id}`)
+
   
     setEachJobs(res.data.data)
     console.log(res.data.data)
@@ -54,7 +56,9 @@ const saveJobs = async () => {
 
          try {
         const res=await axios.post(
-            "http://localhost:4000/api/save-job",
+            // "http://localhost:4000/api/save-job",
+                        "https://jobportal-backend-x18f.onrender.com/api/save-job",
+
             { jobId: _id },
             {
                 headers: {

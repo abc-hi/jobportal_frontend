@@ -23,7 +23,9 @@ const Home = () => {
 
   useEffect(() => {
 
-    axios.get("http://localhost:4000/api/getAll-Jobs/")
+    // axios.get("http://localhost:4000/api/getAll-Jobs/")
+        axios.get("https://jobportal-backend-x18f.onrender.com/api/getAll-Jobs/")
+
       .then(res => {
         const jobs = res.data.data
         setAllJobs(jobs)

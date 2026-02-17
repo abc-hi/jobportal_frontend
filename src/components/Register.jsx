@@ -18,7 +18,8 @@ const Register = () => {
 
 const payloads = {name,email,password,confirmPassword}
 
-       axios.post("http://localhost:4000/api/register",payloads)
+    //    axios.post("http://localhost:4000/api/register",payloads)
+       axios.post("https://jobportal-backend-x18f.onrender.com/api/register",payloads)
        .then((res)=>setResponseMsg(res.data.message))
     
        .catch((err)=>
