@@ -104,10 +104,15 @@ const shareJobs = (platform) => {
     );
   }
 };
-const relatedJobs = AllJobs.filter(j =>
-  j.jobtitle === eachJobs.jobtitle && j._id !== eachJobs._id
-);
 
+// relatedjobs
+const relatedJobs =
+  eachJobs && AllJobs?.length
+    ? AllJobs.filter(j =>
+        j.jobcategory === eachJobs.jobcategory &&
+        j._id !== eachJobs._id
+      )
+    : [];
 
 
   return (
