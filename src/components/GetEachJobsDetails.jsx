@@ -257,7 +257,7 @@ const relatedJobs =
  <div>
       <h4 className="fw-bold mb-3" style={{fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize:'20px', color:'red'}}>Related Jobs</h4>
       {relatedJobs.length === 0 ? (
-        <p>No jobs found</p>
+        <p>No related jobs found</p>
       ) : (
         relatedJobs.map(job => (
           <div key={job._id}>
