@@ -7,7 +7,7 @@ import { useEffect } from 'react';
 import axios from 'axios';
 import JobFilter from './JobFilter.jsx';
 import {myContext} from './ContextAPI.jsx'
-
+import Loading from './Loading.jsx';
 
 const Home = () => {
   const navigate = useNavigate()
@@ -88,7 +88,7 @@ const Home = () => {
         {/* LEFT SIDE – JOB LIST */}
         <div style={{ border: '1px solid gray',fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize:'19px' }}>
           {visibleFilteredJobs.length === 0 ? (
-            <p style={{ padding: "10px" }}>No jobs found</p>
+            <p style={{ padding: "10px" }}><Loading /></p>
           ) : (
             visibleFilteredJobs.map(job => (
               <div key={job._id}>
