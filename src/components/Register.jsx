@@ -27,7 +27,7 @@ const payloads = {name,email,password,confirmPassword}
        console.log("error:", err.response || err.message))
     }
     return (
-        <div style={{fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize:'19px',backgroundColor: '#94a09c',width: '100vw', padding: '0' }}>
+        <div style={{fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize:'19px',backgroundColor: '#94a09c',width: '100vw',minHeight:'100vh', margin: '0', padding: '0' }}>
             <div className="row justify-content-center"
             >
                 <div className="col-md-6 mt-5 mb-3">
