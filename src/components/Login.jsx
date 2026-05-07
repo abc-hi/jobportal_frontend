@@ -4,7 +4,8 @@ import { useState } from 'react';
 import { myContext } from './ContextAPI';
 import {useContext} from 'react'
 import { useNavigate } from 'react-router-dom';
-
+import Register from './Register.jsx';
+import { Link } from 'react-router-dom';
 const Login = () => {
 const token = localStorage.getItem("token");
 
@@ -81,6 +82,8 @@ const payloads = {email,password}
                                 <label className="form-check-label" htmlFor="exampleCheck1">Check me out</label>
                             </div>
                             <button type="submit" className="btn btn-primary">Submit</button>
+                            <p>Login to apply or save job.</p>
+                            <p>New to JobPortal? Please <Link to='/register'>Register here.</Link> </p>
                         </form>                        {responseMsg && <p>{responseMsg}</p>}
                         
 

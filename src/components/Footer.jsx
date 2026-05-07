@@ -16,7 +16,7 @@ const Footer = () => {
   }
 
   return (
-    <div style={{backgroundColor:'#a6d8db71', border: '1px solid white', display: "flex", textAlign: 'center', justifyContent: "center", flexDirection: "column" }}>
+    <div style={{backgroundColor:'#a6d8db71', border: '1px solid white', display: "flex", textAlign: 'center', justifyContent: "center", flexDirection: "column", maxHeight:'100vh' }}>
       <h1>JobConnect</h1>
       <div className='space-x-6'>
         <div style={{fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize:'19px',display: "flex", flexDirection: "row", gap: "30px", justifyContent: "center", alignItems: "center", padding: "20px"}}>

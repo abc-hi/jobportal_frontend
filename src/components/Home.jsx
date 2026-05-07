@@ -50,6 +50,8 @@ const Home = () => {
 
   return (
     <div>
+      <div className='row'>
+      <div className='col-12 col-sm-2 col-md-4'>
       <div
   style={{
     width: '100%',
@@ -112,6 +114,8 @@ const Home = () => {
         </div>
 
   </div>
+    </div>
+    </div>
     </div>
   );
 };
