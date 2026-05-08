@@ -120,7 +120,7 @@ const relatedJobs =
   return (
   <div>
 {/* //applybottonontop */}
-    <div style={{ display: 'flex', justifyContent: 'flex-end',fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize:'19px'}}>
+    <div style={{ display: 'flex', justifyContent: 'flex-end',fontFamily: 'Inter, sans-serif', fontWeight: 500,minWidth:"100vw", fontSize:'19px'}}>
            <button
   style={{
     backgroundColor: '#4668b3',
