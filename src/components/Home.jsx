@@ -50,7 +50,7 @@ const Home = () => {
 
   return (
     <div>
-      <div className='row'>
+      <div className='container-fluid p-0'>
       <div className='col-12 col-sm-2 col-md-4'>
       <div
   style={{
