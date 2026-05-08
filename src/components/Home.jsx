@@ -49,8 +49,8 @@ const Home = () => {
     // const jobsToShow = visibleFilteredJobs.length > 0 ? visibleFilteredJobs : AllJobs;
 
   return (
-    <div>
-      <div className='container-fluid p-0'>
+    <div className='container-fluid p-0'>
+      <div className='row'>
       <div className='col-12 col-sm-2 col-md-4'>
       <div
   style={{
