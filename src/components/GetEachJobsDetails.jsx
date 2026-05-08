@@ -39,6 +39,8 @@ const handleApplyClick=(()=>{
   if(loggedIn){
 
 setShowForm(true)
+// setTimeout is used to wait for React to render the form
+// It’s a timing hack to avoid “element not found”
  setTimeout(() => {
             document
                 .getElementById("apply-form")
