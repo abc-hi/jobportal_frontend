@@ -48,7 +48,7 @@ setJobType(null)
   return (
     <div style={{ backgroundColor: '#a6d8db71'}}>
 
-       <div style={{fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize:'19px',display:'flex', gap:'70px', alignItems:'center',padding:'25px', margin:'1px'}}><Select options={jobLocationOptions} value={jobLocationOptions.find(option => option.value === jobLocation) || null}
+       <div style={{fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize:'19px',display:'flex', gap:'70px', alignItems:'center',padding:'25px',minWidth:'100vw', margin:'1px'}}><Select options={jobLocationOptions} value={jobLocationOptions.find(option => option.value === jobLocation) || null}
  onChange={(option)=>setJobLocation(option?.value)}/>
  <Select options={jobTypeOptions} value={jobTypeOptions.find(option => option.value === jobType) || null}
  onChange={(option)=>setJobType(option?.value)}/>
