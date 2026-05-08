@@ -75,7 +75,7 @@ const Home = () => {
 </div>
 
         {/* <div className="page-container" style={{ backgroundColor: '#a6d8db71', padding: "20px" }}> */}
-        <div className="container-fluid" style={{ backgroundColor: '#a6d8db71', padding: "20px" }}>
+        <div className="container-fluid p-0" style={{ backgroundColor: '#a6d8db71', padding: "20px" }}>
         <h1 style={{FontFamily: 'Roboto, sans-serif', fontWeight: 700,fontSize:'40px'}}>Welcome to JobConnect</h1><br />
         <p className="margin" style={{ marginLeft: "7rem" ,fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize:'20px'}}>Your gateway to exciting career opportunities!</p>
         <p className="margin" style={{ marginLeft: "7rem" ,fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize:'20px'}}>Whether you're looking to apply for positions or showcase your skills to top employers, you've come to the right place.</p>
