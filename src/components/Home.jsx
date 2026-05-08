@@ -86,7 +86,7 @@ const Home = () => {
       {/* filter */}
       <JobFilter AllJobs={AllJobs} setAllJobs={setAllJobs} visibleFilteredJobs={visibleFilteredJobs} setVisibleFilteredJobs={setVisibleFilteredJobs} />
       {/* Grid */}
-      <div style={{ display: 'grid', gridTemplateColumns: '40% 60%' ,backgroundColor:'#a6d8db71'}}>
+      <div style={{ display: 'grid', gridTemplateColumns: '40% 60%' ,backgroundColor:'#a6d8db71',minWidth:'100vw'}}>
       
 
         {/* LEFT SIDE – JOB LIST */}
