@@ -24,6 +24,8 @@ const token = localStorage.getItem("token");
         e.preventDefault()
         console.log('Form submitted with:',email,password);
 
+        console.log("before api call",email, password);
+
 const payloads = {email,password}
 
     //    axios.post("http://localhost:4000/api/login",payloads)
@@ -33,16 +35,19 @@ const payloads = {email,password}
          //  SAVE TOKEN + USER ID HERE
       localStorage.setItem("token", res.data.token);
       localStorage.setItem("userId", res.data.user._id);
+      
+       console.log("TOKEN FROM LOCALSTORAGE:", token);
         setResponseMsg(res.data.message)
         setName(res.data.user.name)
         setLoggedIn(true)
         navigate('/')
+                console.log("after api call",email, password);
+
        })
 
        .catch((err)=>
        console.log("error:", err.response || err.message))
 
-       console.log("TOKEN FROM LOCALSTORAGE:", token);
 
     }
     

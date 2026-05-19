@@ -52,6 +52,7 @@ setJobType(null)
  onChange={(option)=>setJobLocation(option?.value)}/>
  <Select options={jobTypeOptions} value={jobTypeOptions.find(option => option.value === jobType) || null}
  onChange={(option)=>setJobType(option?.value)}/>
+ {/* Select - is modern ui feater installed by npm install react-select */}
                    <input type="text" placeholder='Enter Job Title' style={{Hover:'#059669'}} value={jobTitle} onChange={(e)=>setJobTitle(e.target.value)}/>
            
 

@@ -40,6 +40,7 @@ const Home = () => {
   }, [])
 
   useEffect(() => {
+    // initially before filter alljobs == visibleFilteredJobs, if we use alljobs here after filtering it navigate the alljobs' first job
     if (visibleFilteredJobs.length > 0) {
       navigate(`${visibleFilteredJobs[0]._id}`)
     }

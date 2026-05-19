@@ -48,7 +48,7 @@ if (resume) formData.append('resume', resume);
 formData.append('websites', websites); // backend splits comma into array
             formData.append('salary', salary);
             formData.append('expSummary', expSummary);
-            formData.append('_id', _id); // job id
+            // formData.append('_id', _id); // job id
             
 
                 const token = localStorage.getItem("token");
@@ -57,7 +57,7 @@ formData.append('websites', websites); // backend splits comma into array
 
                             const res = await axios.post(`https://jobportal-backend-x18f.onrender.com/api/apply-job/${_id}`, formData, {
 
-                            headers: { Authorization: `Bearer ${token}`,'Content-Type': 'multipart/form-data' },
+                            headers: { Authorization: `Bearer ${token}` },
 
             })
             setMessage(res.data.message)
@@ -70,6 +70,7 @@ formData.append('websites', websites); // backend splits comma into array
     alert(error.response.data.message);
   } else {
     alert("Failed to submit application");
+    //  alert(error.response.data.message);
   }
 }
     }
@@ -105,8 +106,12 @@ return (
                     <label htmlFor="age">Enter your age:</label><input type="number" value={age} onChange={(e) => setAge(e.target.value)} required />
                     <label htmlFor="phoneNo"></label>Enter your PhoneNo<input type="number" value={phoneNo} onChange={(e) => setPhoneno(e.target.value)} required />
                     <label htmlFor="gender">Select your gender</label> <Select options={genderOptions} onChange={(option) => setGender(option.value)} required />
-                   {resume? 'Change Resume' :  <label htmlFor="resume">Attach your resume</label>}
-                                      <input type="file" onChange={(e) => setResume(e.target.files[0])} required />
+                   {/* here without value inside select it works because  */}
+                  {/* resume? 'Change Resume' :  <label htmlFor="resume">Attach your resume</label> */}
+                   <label htmlFor="resume">
+  {resume ? 'Change Resume' : 'Attach your resume'}
+</label>
+                   <input type="file" onChange={(e) => setResume(e.target.files[0])} required />
                     <label htmlFor="linkedIn">Type your linkedIn URL:</label>
                     <input type="text" value={linkedIn} onChange={(e) => setLinkedIn(e.target.value)} required />
                     <label htmlFor="portfolio">type your portfolio URL:</label>
@@ -121,7 +126,7 @@ return (
                     <div style={{display:'flex',gap:'12px'}}>
                     <button style={{backgroundColor:'#4668b3',fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize:'19px', borderRadius:'3px',color:'#FFFFFF',padding: '14px',width: '120px',border:'none'}} type='submit'>Submit</button>
 <button style={{backgroundColor:'#4668b3',fontFamily: 'Inter, sans-serif', fontWeight: 500, fontSize:'19px', borderRadius:'3px',color:'#FFFFFF',padding: '14px',width: '120px',border:'none'}} onClick={handleCloseForm} type='button'>Close</button>  </div>                                     
-
+{message}
        
              
         </div>

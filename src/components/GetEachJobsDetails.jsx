@@ -24,6 +24,7 @@ const fetchEachJob = async(_id)=>{
 
   
     setEachJobs(res.data.data)
+
     console.log(res.data.data)
    
   } catch (error) {
@@ -38,9 +39,35 @@ useEffect(()=>{
 const handleApplyClick=(()=>{
   if(loggedIn){
 
+    // loggedIn when:
+
+//  UI decisions only
+// ✔ Good for:
+
+// showing/hiding UI
+// navigation
+// user experience
+// set token when:
+
+//  Calling backend APIs
+// Required for:
+
+// protected routes
+// saving job
+// applying job
+// fetching user data
+
 setShowForm(true)
 // setTimeout is used to wait for React to render the form
 // It’s a timing hack to avoid “element not found”
+
+// setShowForm(true)
+// This makes the <ApplyJob /> form appear lower on the page.
+// But user may still be at the top of page.
+// So:
+// scrollIntoView()
+// automatically moves the screen to the form.
+
  setTimeout(() => {
             document
                 .getElementById("apply-form")
@@ -115,7 +142,7 @@ const relatedJobs =
         j._id !== eachJobs._id
       )
     : [];
-
+// eachJobs -currently selected / opened job details
 
   return (
   <div>
@@ -202,7 +229,8 @@ const relatedJobs =
   onClick={handleApplyClick}
 >
   Apply
-</button></div>
+</button>
+{message}</div>
  {/* saveJobs()-This calls the function immediately when React renders, instead of waiting for the click. */}
 
 {/* share button */}
@@ -249,7 +277,8 @@ const relatedJobs =
     onClick={() => navigate("/login")}
   >
   Save
-  </button>)} </div>
+  </button>)}
+  {message} </div>
 
 </div>
        </div>

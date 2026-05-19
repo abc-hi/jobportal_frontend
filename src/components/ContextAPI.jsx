@@ -1,6 +1,8 @@
 
 import React, { useState } from 'react'
 import { createContext } from 'react'
+
+
 export const myContext = createContext()
 const ContextAPI = ({children}) => {
 const[name,setName] =useState('')
