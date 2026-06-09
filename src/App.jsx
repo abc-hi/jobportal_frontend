@@ -16,9 +16,9 @@ const App = () => {
       <ContextAPI>
       <Navbar />
                   <Routes>
-        <Route path="/register" element={<Register />} />
-        <Route path="/login" element={<Login />} />
-     
+        <Route path="/Register" element={<Register />} />
+        <Route path="/Login" element={<Login />} />
+    
 
         <Route path="/" element={<Home />} >
         <Route path=':_id' element={< GetEachJobsDetails/>} /> 

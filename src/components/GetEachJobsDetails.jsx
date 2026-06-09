@@ -274,7 +274,7 @@ const relatedJobs =
     padding: '8px 16px',
     border: 'none'
     }}
-    onClick={() => navigate("/login")}
+    onClick={() => navigate("/login")}            //Link → user clicks a link/button.navigate() → JavaScript redirects automatically.
   >
   Save
   </button>)}
@@ -318,3 +318,132 @@ const relatedJobs =
   
 
 export default GetEachJobsDetails
+
+
+// Where FRONTEND and BACKEND MUST match
+
+// These are strict matches (must be same):
+
+// ✅ A) API URL (endpoint path)
+// Frontend:
+// axios.get("https://api.com/job/123")
+// Backend:
+// router.get("/job/:id", handler);
+
+// ✔ The structure must match
+
+// /job/123 → must hit /job/:id
+
+// 👉 Otherwise API will not work
+
+// ✅ B) HTTP method
+
+// Frontend:
+
+// axios.post("/login")
+
+// Backend:
+
+// router.post("/login", handler);
+
+// ✔ Must match:
+
+// GET ↔ GET
+// POST ↔ POST
+// ✅ C) Request type (JSON / FormData)
+
+// If frontend sends:
+
+// Content-Type: application/json
+
+// Backend must use:
+
+// app.use(express.json());
+
+// If frontend sends file:
+
+// FormData + file
+
+// Backend must use:
+
+// multer
+
+// ✔ Format must match
+
+// ✅ D) Field names in body (IMPORTANT)
+
+// Frontend:
+
+// axios.post("/apply", {
+//   name: "Revathi"
+// });
+
+// Backend:
+
+// req.body.name
+
+// ✔ MUST match exactly:
+
+// name ≠ username ❌
+// email ≠ mail ❌
+// 🧠 2️⃣ Where they DO NOT need to match
+// ❌ A) Variable names like _id, id, jobId
+
+// Frontend:
+
+// axios.get(`/job/${_id}`)
+
+// Backend:
+
+// req.params.id
+
+// ✔ OK
+
+// 👉 Because only POSITION matters, not name
+
+// ❌ B) Local variable names inside code
+
+// Frontend:
+
+// const jobId = _id;
+
+// Backend:
+
+// const id = req.params.id;
+
+// ✔ No need to match
+
+// ❌ C) Database field names vs API names
+
+// MongoDB:
+
+// MongoDB (database)
+// {
+//   "_id": "64abc123",
+//   "name": "Revathi"
+// }
+// API response (what you send to frontend)
+// res.json({
+//   id: user._id,
+//   name: user.name
+// });
+
+// ✔ Can be different
+
+// 🔥 SIMPLE RULE (VERY IMPORTANT)
+// ✔ MUST MATCH
+// URL structure (/job/:id)
+// HTTP method (GET/POST)
+// Request body field names
+// Content type (JSON/FormData)
+// ❌ NO NEED TO MATCH
+// variable names (_id, id, jobId)
+// internal backend variable names
+// frontend state variable names
+// MongoDB field naming style
+
+
+
+// req.params → value comes from URL (/job/123)
+// req.body → value comes from request payload ({ jobId: "123" })
+// req.query → value comes from query string (?jobId=123)
