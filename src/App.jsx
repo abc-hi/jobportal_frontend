@@ -21,7 +21,11 @@ const App = () => {
     
 
         <Route path="/" element={<Home />} >
-        <Route path=':_id' element={< GetEachJobsDetails/>} /> 
+        <Route path=':_id' element={< GetEachJobsDetails/>} />
+                        {/* Links inside nested routes should be relative (to={${item._id}}) instead of absolute (to={/${item._id}}).  */}
+
+        </Route>                          
+        {/* //from Home to above </Route> nested route */}
          
          {/* // it means inside GetAllJobs with id goes to GetEach  JobsDetails */}
 {/* 
@@ -38,8 +42,6 @@ It's best to use the same casing in both Link and Route
 Some setups/versions may still work when using /Login and /login,
 but relying on that is not recommended.
 */}               
-               {/* <Route path="apply/:_id" element={<ApplyJob />} /> */}
-                {/* Links inside nested routes should be relative (to={${item._id}}) instead of absolute (to={/${item._id}}).  */}
 
                 
                   {/* it(apply/:_id) should match to
@@ -55,11 +57,8 @@ We manually pass MongoDB _id from frontend and access it using useParams(). in b
 */}
         
       
-        {/* <Route path="/GetEachJobsDetails/ApplyJob" element={<ApplyJob />} />                      */}
-         {/* //same like above this router path should match with 'navigate' or 'Link to' if we use */}
 
-        </Route>                          
-        {/* //from Home to above </Route> nested route */}
+        
 
         </Routes>
         
